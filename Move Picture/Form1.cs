@@ -34,7 +34,17 @@ namespace Move_Picture
 
         private void btnLeft_Click(object sender, EventArgs e)
         {
-            pictureBox1.Location = new Point(pictureBox1.Location.X - 5, pictureBox1.Location.Y);
+            while (pictureBox1.Location.X - 5 < ClientRectangle.Width - pictureBox1.Width)
+                pictureBox1.Location = new Point(pictureBox1.Location.X - 5, pictureBox1.Location.Y);
+
+        }
+
+        private async void button1_Click_1(object sender, EventArgs e)
+        {
+            while (pictureBox1.Location.X + 5 < ClientRectangle.Width - pictureBox1.Width)
+            pictureBox1.Location = new Point(pictureBox1.Location.X + 5, pictureBox1.Location.Y);
+            await Task.Delay(500);
         }
     }
 }
+        
